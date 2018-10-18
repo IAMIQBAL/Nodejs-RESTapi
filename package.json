@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "server.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/IAMIQBAL/Nodejs-RESTapi#readme",
   "dependencies": {
-    "mongoose": "^5.3.4",
-    "nodemon": "^1.18.4"
+    "mongoose": "^5.3.4"
   }
 }
