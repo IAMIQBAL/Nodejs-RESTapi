@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 //     });
 // });
 
-router.post('/', (req, res, next) =>{
+router.post('', (req, res, next) =>{
     // const newUser = {
     //     name: req.body.name,
     //     password: req.body.password
