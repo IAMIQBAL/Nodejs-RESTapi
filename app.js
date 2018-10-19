@@ -11,7 +11,7 @@ mongoose.connect('mongodb://mib47225:mibdream2013@mappie-db-shard-00-00-pvyl0.mo
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json());
 
-app.use('/user', loginRoutes);
+app.use('user', loginRoutes);
 
 app.use((req, res, next) =>{
     const error = new Error('Not Found');
