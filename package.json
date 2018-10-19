@@ -4,8 +4,7 @@
   "description": "Mappie Nodejs Backend",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,7 @@
   },
   "homepage": "https://github.com/IAMIQBAL/Nodejs-RESTapi#readme",
   "dependencies": {
-    "mongoose": "^5.3.4"
+    "mongoose": "^5.3.4",
+    "express": "^4.16.4"
   }
 }
