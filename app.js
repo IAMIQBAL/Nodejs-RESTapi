@@ -5,7 +5,7 @@ const app = express();
 
 const loginRoutes = require('./api/routes/login');
 
-mongoose.connect('mongodb://mib47225:mibdream2013@mappie-db-shard-00-00-pvyl0.mongodb.net:27017,mappie-db-shard-00-01-pvyl0.mongodb.net:27017,mappie-db-shard-00-02-pvyl0.mongodb.net:27017/test?ssl=true&replicaSet=Mappie-DB-shard-0&authSource=admin&retryWrites=true'
+mongoose.connect('mongodb://mib47225:mibdream2013@mappie-db-shard-00-00-pvyl0.mongodb.net:27017,mappie-db-shard-00-01-pvyl0.mongodb.net:27017,mappie-db-shard-00-02-pvyl0.mongodb.net:27017/mappie?ssl=true&replicaSet=Mappie-DB-shard-0&authSource=admin&retryWrites=true'
 );
 
 app.use(bodyparser.urlencoded({extended:false}))

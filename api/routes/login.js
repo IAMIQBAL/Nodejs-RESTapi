@@ -17,8 +17,11 @@ router.post('/', (req, res, next) =>{
     // };
     const user = new Login({
         _id: new mongoose.Types.ObjectId(),
+        email: req.body.email,
         username: req.body.username,
-        password:req.body.password
+        password:req.body.password,
+        contacts:req.body.contacts,
+        imei:req.body.imei
     });
     user
         .save()
@@ -27,7 +30,6 @@ router.post('/', (req, res, next) =>{
             res.status(201).json({
                 createdUser: {
                     name: result.username,
-                    password: result.password,
                     _id: result._id
                 }
             });
@@ -40,15 +42,16 @@ router.post('/', (req, res, next) =>{
         });
 });
 
-router.get('/:username',(req, res, next)=>{
+router.get('/:username/:password',(req, res, next)=>{
     const uname = req.params.username;
-    Login.find({"username":uname})
+    const password = req.params.password;
+    Login.find({"username":uname ,"password": password})
     .exec()
     .then(doc => {
-        console.log('From database', doc);
-        if (doc) {
+        // console.log("Logged In")
+        if (doc != 0) {
             res.status(200).json({
-                user: doc,
+                data: doc
             });
         } else {
             res.status(404).json({
