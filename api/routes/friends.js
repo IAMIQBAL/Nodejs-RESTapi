@@ -1,27 +1,27 @@
 const express = require("express")
-const router2 = express.Router();
+const router = express.Router();
 
 const friends = require("../../models/friends")
 const mongoose = require("mongoose")
 
-router2.get('/:username/:password', (req, res, next) =>{
+router.get('/:username/:password', (req, res, next) =>{
     const uname = req.params.username;
     const password = req.params.password;
-    friends.find({"username": uname, "password":password})
+    friends.find({"username": uname, "password": password})
     .exec()
     .then(doc=>{
         if (doc !=0 ){
-            res.sendStatus(200).json({
+            res.status(200).json({
                 data:doc
-            })
+            });
         } else {
-            res.sendStatus(404).json({
+            res.status(404).json({
                 message: "User not found"
             })
         }
     }).catch(err=>{
-        err.sendStatus(505)
+        err.status(505)
     })
 })
 
-module.exports = router2
+module.exports = router
