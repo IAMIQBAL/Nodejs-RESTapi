@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const loginRoutes = require('./api/routes/login');
+const friendsRoutes = require('./api/routes/friends')
 
 mongoose.connect('mongodb://mib47225:mibdream2013@mappie-db-shard-00-00-pvyl0.mongodb.net:27017,mappie-db-shard-00-01-pvyl0.mongodb.net:27017,mappie-db-shard-00-02-pvyl0.mongodb.net:27017/mappie?ssl=true&replicaSet=Mappie-DB-shard-0&authSource=admin&retryWrites=true'
 );
@@ -12,6 +13,7 @@ app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json());
 
 app.use('/user', loginRoutes);
+app.use('/friends', friendsRoutes)
 
 app.use((req, res, next) =>{
     const error = new Error('Not Found');
@@ -29,5 +31,3 @@ app.use((error, req, res, next) => {
 })
 
 module.exports = app;
-
-// Use Heroku and mongodb to deploy(mongolab)
