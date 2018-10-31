@@ -1,0 +1,2 @@
+0) friendlist endpoint = /username/friends
+1) Add friendlist column to mongodb and then get the data and format it and then  send is as response
