@@ -23,5 +23,5 @@ router.get('/:username/:password', (req, res, next) =>{
         err.status(505)
     })
 })
-
+ 
 module.exports = router
